@@ -12,9 +12,9 @@ public:
     Company() : name("Name"), number_of_people(10), age(19), price(10000) {}
 
     Company(string name, int count_of_people, int age, int price) : name(name), number_of_people(count_of_people), age(age), price(price) {}
-
+    ~Company() {}
     void CompanyInfo() {
-        cout << "Íàçâàíèå êîìïàíèè: " << name << "\nÊîëè÷åñòâî ñîòðóäíèêîâ " << number_of_people << "\nÂîçðàñò êîìïàíèè: " << age << "\nÑòîèìîñòü êîìïàíèè: " << price << "\n___________" << endl;
+        cout << "ÃÃ Ã§Ã¢Ã Ã­Ã¨Ã¥ ÃªÃ®Ã¬Ã¯Ã Ã­Ã¨Ã¨: " << name << "\nÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã±Ã®Ã²Ã°Ã³Ã¤Ã­Ã¨ÃªÃ®Ã¢ " << number_of_people << "\nÃ‚Ã®Ã§Ã°Ã Ã±Ã² ÃªÃ®Ã¬Ã¯Ã Ã­Ã¨Ã¨: " << age << "\nÃ‘Ã²Ã®Ã¨Ã¬Ã®Ã±Ã²Ã¼ ÃªÃ®Ã¬Ã¯Ã Ã­Ã¨Ã¨: " << price << "\n___________" << endl;
     }
 };
 
@@ -31,9 +31,9 @@ public:
 
     Employee() : members_of_family(3), money(1000000) {}
     Employee(string name_of_emp, int age_of_emp, int members_of_family, int money) : name_of_emp(name_of_emp), age_of_emp(age_of_emp), members_of_family(members_of_family), money(money) {}
-
+    ~Employee() {}
     void EmployeeInfo() {
-        cout << "Èìÿ ðàáî÷åãî: " << name_of_emp << "\nÂîçðàñò: " << age_of_emp << "\nÑîñòîÿíèå: " << money << "\nÊîëè÷åñòâî ÷ëåíîâ ñåìüè: " << members_of_family << "\n___________" << endl;
+        cout << "ÃˆÃ¬Ã¿ Ã°Ã Ã¡Ã®Ã·Ã¥Ã£Ã®: " << name_of_emp << "\nÃ‚Ã®Ã§Ã°Ã Ã±Ã²: " << age_of_emp << "\nÃ‘Ã®Ã±Ã²Ã®Ã¿Ã­Ã¨Ã¥: " << money << "\nÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã·Ã«Ã¥Ã­Ã®Ã¢ Ã±Ã¥Ã¬Ã¼Ã¨: " << members_of_family << "\n___________" << endl;
     }
 };
 
@@ -54,9 +54,9 @@ public:
 
     Vehicle() : brand("Vehicle"), price(0), year(0), color("Color") {}
     Vehicle(string brand, int price, int year, string color) : brand(brand), price(price), year(year), color(color) {}
-
+    ~Venicle() {}
     void VehicleInfo() {
-        cout << "Áðåíä: " << brand << "\nÖåíà: $" << price << "\nÃîä âûïóñêà: " << year << "\nÖâåò: " << color << "\n___________" << endl;
+        cout << "ÃÃ°Ã¥Ã­Ã¤: " << brand << "\nÃ–Ã¥Ã­Ã : $" << price << "\nÃƒÃ®Ã¤ Ã¢Ã»Ã¯Ã³Ã±ÃªÃ : " << year << "\nÃ–Ã¢Ã¥Ã²: " << color << "\n___________" << endl;
     }
 };
 
@@ -73,10 +73,10 @@ public:
     Truck() : capacity(0), mass(0) {}
 
     Truck(int capacity, int mass, string brand, int price, int year, string color) : capacity(capacity), mass(mass), Vehicle(brand, price, year, color) {}
-
+    ~Truck() {}
 
     void TruckInfo() {
-        cout << "Áðåíä: " << brand << "\nÃðóçîïîäúåìíîñòü: " << capacity << "\nÌàññà " << mass << "\nÖåíà: $" << price << "\n___________" << endl;
+        cout << "ÃÃ°Ã¥Ã­Ã¤: " << brand << "\nÃƒÃ°Ã³Ã§Ã®Ã¯Ã®Ã¤ÃºÃ¥Ã¬Ã­Ã®Ã±Ã²Ã¼: " << capacity << "\nÃŒÃ Ã±Ã±Ã  " << mass << "\nÃ–Ã¥Ã­Ã : $" << price << "\n___________" << endl;
     }
 };
 
@@ -95,12 +95,10 @@ public:
     Car() : seats(seats), weight(weight) {}
 
     Car(int seats, int weight, string brand, int price, int year, string color) : seats(seats), weight(weight), Vehicle(brand, price, year, color) {}
-
-
     Car(int seats, int weight, Vehicle& vehicle) : seats(seats), weight(weight), Vehicle(vehicle) {}
-
+    ~Car() {}
     void CarInfo() {
-        cout << "Êîëè÷åñòâî ìåñò: " << seats << "\nÌàññà: " << weight << "\nÁðåíä: " << brand << "\nÖåíà: $" << price << "\nÃîä âûïóñêà: " << year << "\nÖâåò: " << color << endl;
+        cout << "ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã¬Ã¥Ã±Ã²: " << seats << "\nÃŒÃ Ã±Ã±Ã : " << weight << "\nÃÃ°Ã¥Ã­Ã¤: " << brand << "\nÃ–Ã¥Ã­Ã : $" << price << "\nÃƒÃ®Ã¤ Ã¢Ã»Ã¯Ã³Ã±ÃªÃ : " << year << "\nÃ–Ã¢Ã¥Ã²: " << color << endl;
     }
 };
 
